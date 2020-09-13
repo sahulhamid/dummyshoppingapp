@@ -7,7 +7,18 @@
     </title>
 </head>
 <body>
-    {{product.name}}
-    {{product.price}}
+   {% for product in cart_product %} 
+        <h1>{{product.name}}</h1>
+        <h1>{{product.price}}</h1>
+        <h2><a href="{% url 'removecart' product.id %}">Remove</a></h2>
+        <h2><a href="{% url 'buy' product.id %}">Buy Now</a></h2>
+   {% endfor %}
+   <h1>my orders</h1>
+   
+    {% for product in b_product %} 
+        <h1>{{product.name}}</h1>
+        <h1>{{product.price}}</h1>
+    {% endfor %}
+  
 </body>
 </html>
